@@ -28,7 +28,7 @@
       2691 Avenida do Café<br>
       Ribeirão Preto, São Paulo <br>
       (+55) 19992943291<br>
-      <a href="mailto:no_reply@example.com">gabrieltabdu@gmail.com</a>
+      <a href="mailto:gabrieltabdu@gmail.com">gabrieltabdu@gmail.com</a>
     </address>
   </header>
 
@@ -51,9 +51,10 @@
 
     <section id="links">
       <h2>Across the Internet</h2>
-      <p>https://github.com/gabrielabdu</p>
-      <p>https://www.linkedin.com/in/gabriel-abdu-598593255/</p>
+      <p><a href="https://github.com/gabrielabdu" target="_blank rel="noopener noreferrer">GitHub</a></p>
+      <p><a href="https://www.linkedin.com/in/gabriel-abdu-598593255/" target="_blank rel="noopener noreferrer">LinkedIn</a></p>
     </section>
+
   </main>
 
   <footer>
