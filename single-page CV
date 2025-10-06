@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gabriel Abdu - Junior Frontend Developer</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Curriculum Vitae of a Junior Frontend Developer showcasing skills, education, and experience." />
+  <meta name="keywords" content="Frontend Developer, HTML, CSS, JavaScript, Resume, CV" />
+  <meta name="author" content="Gabriel Abdu" />
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Gabriel Abdu - Junior Frontend Developer" />
+  <meta property="og:description" content="CV of a Junior Frontend Developer with experience in web design and development." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourwebsite.com/" />
+  <meta property="og:image" content="https://yourwebsite.com/preview.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+<body>
+  <header>
+    <h1>Gabriel Abdu</h1>
+    <p><strong>Junior Frontend Developer</strong></p>
+    <address>
+      2691 Avenida do Café<br>
+      Ribeirão Preto, São Paulo <br>
+      (+55) 19992943291<br>
+      <a href="mailto:no_reply@example.com">gabrieltabdu@gmail.com</a>
+    </address>
+  </header>
+
+  <main>
+    <section id="skills">
+      <h2>Skills</h2>
+      <p>HTML, CSS, JavaScript, C, C++, Java, Python, SQL Databases, Node.js</p>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <article>
+        <h3>University of São Paulo, Ribeirão Preto - Computer Science</h3>
+        <p>March 2024 to December 2027</p>
+        <p>Operating Systems, Computer Networks, Computer Architecture, Computer Graphics, Compilers, Distributed Systems, User-Computer Interaction, Image Processing</p>
+      </article>
+    </section>
+
+    
+
+    <section id="links">
+      <h2>Across the Internet</h2>
+      <p>https://github.com/gabrielabdu</p>
+      <p>https://www.linkedin.com/in/gabriel-abdu-598593255/</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Gabriel Abdu</p>
+  </footer>
+</body>
+</html>
