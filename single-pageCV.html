@@ -19,11 +19,126 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- ===== CSS ===== -->
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 20px 40px;
+      border: 1px solid #000;
+      line-height: 1.6;
+      color: #000;
+      background-color: #fff;
+    }
+
+    header {
+      border-bottom: 2px solid #000;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin: 0;
+    }
+
+    header p {
+      color: #228B22; /* green subtitle */
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    address {
+      font-style: normal;
+      margin-top: 10px;
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    h2 {
+      color: #228B22;
+      font-size: 18px;
+      margin-top: 25px;
+      border-top: 1px solid transparent;
+    }
+
+    h3 {
+      color: #1E90FF; /* blue for subheadings */
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    ul {
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    /* ===== PRINT STYLES ===== */
+    @media print {
+      body {
+        border: none;
+        margin: 0;
+        padding: 0.5in;
+        width: 100%;
+      }
+
+      header {
+        border-bottom: 1.5pt solid #000;
+        margin-bottom: 0.3in;
+      }
+
+      h1 {
+        font-size: 22pt;
+      }
+
+      h2 {
+        color: #006400; /* darker green for print */
+        font-size: 13pt;
+      }
+
+      h3 {
+        color: #00008B; /* darker blue for print */
+        font-size: 12pt;
+      }
+
+      a {
+        color: #000;
+        text-decoration: none;
+      }
+
+      footer {
+        margin-top: 0.5in;
+        color: #000;
+      }
+
+      @page {
+        margin: 0.5in;
+        size: A4;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <header>
     <h1>Gabriel Abdu</h1>
-    <p><strong>Junior Frontend Developer</strong></p>
+    <p>Junior Frontend Developer</p>
     <address>
       2691 Avenida do Café<br>
       Ribeirão Preto, São Paulo <br>
@@ -47,14 +162,11 @@
       </article>
     </section>
 
-    
-
     <section id="links">
       <h2>Across the Internet</h2>
-      <p><a href="https://github.com/gabrielabdu" target="_blank rel="noopener noreferrer">GitHub</a></p>
-      <p><a href="https://www.linkedin.com/in/gabriel-abdu-598593255/" target="_blank rel="noopener noreferrer">LinkedIn</a></p>
+      <p><a href="https://github.com/gabrielabdu" target="_blank" rel="noopener noreferrer">github.com/gabrielabdu</a></p>
+      <p><a href="https://www.linkedin.com/in/gabriel-abdu-598593255/" target="_blank" rel="noopener noreferrer">linkedin.com/in/gabriel-abdu-598593255</a></p>
     </section>
-
   </main>
 
   <footer>
