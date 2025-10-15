@@ -110,3 +110,45 @@ footer {
     border-radius: 6px;
   }
 }
+
+/* ========== Dark Mode Toggle Button ========== */
+#theme-toggle {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #0073e6;
+  color: white;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background-color: #005bb5;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #f2f2f2;
+}
+
+body.dark-mode section {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #1e1e1e;
+  color: #f2f2f2;
+}
+
+body.dark-mode nav a {
+  color: #80bfff;
+}
+
+body.dark-mode nav a:hover {
+  color: #cce6ff;
+}
+
