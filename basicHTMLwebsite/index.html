@@ -10,6 +10,20 @@
   <link rel="stylesheet" href="style.css">
   <title>Frontend Developer | Gabriel Abdu</title>
 </head>
+<script>
+  const toggleButton = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+  }
+
+  toggleButton.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+    localStorage.setItem('theme', theme);
+  });
+</script>
 <body>
   <header>
   <h1>Gabriel Abdu</h1>
