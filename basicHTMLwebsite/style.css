@@ -61,6 +61,31 @@ footer {
   color: #555;
 }
 
+/* ========== DARK MODE ========== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #f2f2f2;
+  }
+  section {
+    background-color: #1e1e1e;
+    border-color: #333;
+  }
+  header, footer {
+  background-color: #1e1e1e;
+  color: #f2f2f2;
+  }
+
+  nav a {
+  color: #80bfff;
+  }
+
+  nav a:hover {
+  color: #cce6ff;
+  }
+
+}
+
 /* ========== Responsive Layout (Desktop) ========== */
 @media (min-width: 768px) {
   main {
