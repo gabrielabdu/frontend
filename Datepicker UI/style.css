@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f5f7fa;
+}
+
+.datepicker {
+  position: relative;
+  width: 260px;
+  max-width: 90vw;
+}
+
+/* Input + Button */
+.input-wrapper {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  background: white;
+}
+
+.input-wrapper input {
+  flex: 1;
+  padding: 10px 12px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.calendar-btn {
+  background: #0077ff;
+  border: none;
+  color: white;
+  width: 42px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Calendar UI */
+.calendar {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.calendar-header .month-year {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.nav {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #333;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.day-label {
+  font-weight: 600;
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.day {
+  text-align: center;
+  padding: 6px 0;
+  font-size: 13px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.day:hover {
+  background: #e3f0ff;
+}
+
+.empty {
+  background: transparent;
+  cursor: default;
+}
+
+/* 🌐 RESPONSIVE DESIGN */
+@media (max-width: 480px) {
+  .datepicker {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .input-wrapper input {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .calendar {
+    position: static;
+    margin-top: 10px;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+
+  .calendar-grid {
+    gap: 2px;
+  }
+
+  .day {
+    padding: 5px 0;
+    font-size: 12px;
+  }
+
+  .calendar-header .month-year {
+    font-size: 13px;
+  }
+}
