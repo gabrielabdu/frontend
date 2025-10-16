@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tabs Component</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f7f7f7;
+    }
+
+    .tabs-container {
+      background-color: white;
+      border: 2px solid #000;
+      border-radius: 10px;
+      width: 600px;
+      padding: 20px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 20px;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      padding: 10px;
+      cursor: pointer;
+      font-weight: 500;
+      color: gray;
+    }
+
+    .tab.active {
+      color: black;
+      border-bottom: 2px solid black;
+    }
+
+    .tab-content {
+      display: none;
+      background: black;
+      color: white;
+      padding: 30px;
+      text-align: center;
+      border-radius: 12px;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="tabs-container">
+    <div class="tabs">
+      <div class="tab active" data-tab="tab1">First Tab</div>
+      <div class="tab" data-tab="tab2">Second Tab</div>
+      <div class="tab" data-tab="tab3">Third Tab</div>
+      <div class="tab" data-tab="tab4">Fourth Tab</div>
+    </div>
+
+    <p>Clicking each tab should hide the content of the other tab and show the content of the clicked tab. By default, enable the first tab.</p>
+
+    <div id="tab1" class="tab-content active">First Tab content to be displayed here.</div>
+    <div id="tab2" class="tab-content">Second Tab content to be displayed here.</div>
+    <div id="tab3" class="tab-content">Third Tab content to be displayed here.</div>
+    <div id="tab4" class="tab-content">Fourth Tab content to be displayed here.</div>
+
+    <p>Add some dummy content or just add a simple text showing the tab.</p>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
