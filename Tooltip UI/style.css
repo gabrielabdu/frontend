@@ -1,0 +1,121 @@
+/* ======= Base Styles ======= */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.navbar {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.nav-list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  position: relative;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ======= Tooltip Base Styles ======= */
+.tooltip {
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 0.85rem;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Tooltip arrow */
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+/* ======= Desktop Animations (default) ======= */
+.nav-item:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  animation: bounceDesktop 0.4s forwards;
+}
+
+/* Bounce desktop keyframes */
+@keyframes bounceDesktop {
+  0%   { transform: translateX(-50%) translateY(10px) scale(0.95); }
+  50%  { transform: translateX(-50%) translateY(-5px) scale(1.05); }
+  70%  { transform: translateX(-50%) translateY(2px) scale(1); }
+  100% { transform: translateX(-50%) translateY(0) scale(1); }
+}
+
+/* Optional stagger for desktop */
+.nav-list .nav-item:nth-child(1) .tooltip { transition-delay: 0s; }
+.nav-list .nav-item:nth-child(2) .tooltip { transition-delay: 0.05s; }
+.nav-list .nav-item:nth-child(3) .tooltip { transition-delay: 0.1s; }
+.nav-list .nav-item:nth-child(4) .tooltip { transition-delay: 0.15s; }
+
+/* ======= Responsive: Mobile Tooltips ======= */
+@media (max-width: 600px) {
+  .nav-list {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .tooltip {
+    bottom: auto;
+    top: 125%;
+    transform: translateX(-50%) translateY(5px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .tooltip::after {
+    top: auto;
+    bottom: 100%;
+    border-color: transparent transparent #333 transparent;
+  }
+
+  /* Simpler mobile animation */
+  .nav-item:hover .tooltip {
+    animation: bounceMobile 0.4s forwards;
+  }
+
+  @keyframes bounceMobile {
+    0%   { transform: translateX(-50%) translateY(5px) scale(0.9); }
+    50%  { transform: translateX(-50%) translateY(-2px) scale(1.05); }
+    100% { transform: translateX(-50%) translateY(0) scale(1); }
+  }
+
+  /* Stagger mobile tooltips */
+  .nav-list .nav-item:nth-child(1) .tooltip { transition-delay: 0s; }
+  .nav-list .nav-item:nth-child(2) .tooltip { transition-delay: 0.05s; }
+  .nav-list .nav-item:nth-child(3) .tooltip { transition-delay: 0.1s; }
+  .nav-list .nav-item:nth-child(4) .tooltip { transition-delay: 0.15s; }
+}
