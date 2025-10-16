@@ -1,0 +1,166 @@
+/* ====== General Reset ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ====== Body Styles ====== */
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  background-color: #f8f9fb;
+  color: #222;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* ====== Testimonials Section ====== */
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* ====== Testimonial Base Style ====== */
+.testimonial {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+}
+
+/* ====== Dark Cards ====== */
+.dark {
+  background-color: #222;
+  color: #fff;
+}
+
+/* ====== Speech Bubble Variants ====== */
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 40px;
+  border-width: 15px 15px 0;
+  border-style: solid;
+}
+
+.speech-bubble.dark::after {
+  border-color: #222 transparent transparent transparent;
+}
+
+.speech-bubble.light::after {
+  border-color: #fff transparent transparent transparent;
+}
+
+/* ====== Author Section ====== */
+.author {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.author img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  object-fit: cover;
+}
+
+.author h4 {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.author p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ====== Rating Card ====== */
+.card {
+  padding-top: 2rem;
+}
+
+.rating {
+  color: #FFD700;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.role {
+  font-style: italic;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+/* ====== Carousel Testimonial ====== */
+.carousel {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.carousel p {
+  margin-bottom: 1.5rem;
+}
+
+.carousel-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.carousel-author img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.carousel-author img:hover {
+  opacity: 1;
+}
+
+.carousel-author button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.carousel-author button:hover {
+  color: #0073e6;
+}
+
+.carousel h4 {
+  font-weight: 600;
+  color: #222;
+}
+
+/* ====== Responsive Tweaks ====== */
+@media (max-width: 768px) {
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .speech-bubble::after {
+    left: 25px;
+  }
+}
