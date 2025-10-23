@@ -1,32 +1,157 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Gabriel Abdu – Front-End Projects</title>
+  <meta charset="UTF-8">
+  <title>Gabriel Abdu – Front-End Projects & Profile</title>
   <style>
-    body { font-family: sans-serif; padding: 40px; background: #f5f5f5; }
-    h1 { color: #333; }
-    ul { list-style: none; padding: 0; }
-    li { margin-bottom: 10px; }
-    a { color: #0066cc; text-decoration: none; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #0066cc;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    header p {
+      margin: 5px 0;
+      font-size: 1.1em;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      background: white;
+      border-radius: 0;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      border-bottom: 1px solid #ddd;
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    h2 {
+      color: #0066cc;
+      border-bottom: 2px solid #0066cc;
+      padding-bottom: 8px;
+      margin-top: 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .info p {
+      margin: 8px 0;
+    }
+
+    .projects {
+      background: white;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #eee;
+      font-size: 0.9em;
+      color: #555;
+      border-top: 1px solid #ddd;
+    }
   </style>
 </head>
 <body>
-  <h1>Front-End Projects by Gabriel Abdu</h1>
-  <ul>
-    <li><a href="Accessible Form UI/index.html">Accessible Form UI</a></li>
-    <li><a href="Accordion/index.html">Accordion</a></li>
-    <li><a href="Age Calculator/index.html">Age Calculator</a></li>
-    <li><a href="Changelog Component/index.html">Changelog Component</a></li>
-    <li><a href="Cookie Consent/index.html">Cookie Consent</a></li>
-    <li><a href="Datepicker UI/index.html">Datepicker UI</a></li>
-    <li><a href="Image Grid Layout/index.html">Image Grid Layout</a></li>
-    <li><a href="Personal Portfolio/index.html">Personal Portfolio</a></li>
-    <li><a href="Profile Card/index.html">Profile Card</a></li>
-    <li><a href="Restricted Textarea/index.html">Restricted Textarea</a></li>
-    <li><a href="Single Page CV/index.html">Single Page CV</a></li>
-    <li><a href="Tabs/index.html">Tabs</a></li>
-    <li><a href="Testimonial Cards/index.html">Testimonial Cards</a></li>
-    <li><a href="Tooltip UI/index.html">Tooltip UI</a></li>
-  </ul>
+
+  <header>
+    <h1>Gabriel de Toledo Abdu</h1>
+    <p>Computer Science Undergraduate – University of São Paulo (USP)</p>
+    <p>Ribeirão Preto, São Paulo, Brazil</p>
+    <p><a href="https://www.linkedin.com/in/gabriel-abdu-598593255" target="_blank" style="color: #fff; text-decoration: underline;">LinkedIn Profile</a></p>
+  </header>
+
+  <section class="info">
+    <h2>Objective</h2>
+    <p>Motivated Computer Science student with hands-on experience in front-end development projects. Seeking a remote internship to apply my skills in HTML, CSS, and JavaScript, while gaining real-world experience in building responsive and user-friendly web interfaces.</p>
+
+    <h2>Education</h2>
+    <ul>
+      <li><strong>University of São Paulo (USP)</strong> — B.Sc. in Computer Science (2024–2027)</li>
+      <li>Currently in 5th semester. Coursework: Data Structures, Algorithms, Discrete Mathematics, Software Engineering.</li>
+      <li><strong>Electronics Technician Certificate (State University of Campinas)</strong> — 2020–2022</li>
+      <li>Hands-on experience with circuit design, microcontrollers, soldering, and analog/digital electronics.</li>
+    </ul>
+
+    <h2>Skills</h2>
+    <ul>
+      <li><strong>Programming:</strong> HTML/CSS, JavaScript, Java, Python, C/C++, SQL</li>
+      <li><strong>Tools:</strong> GitHub, Linux, VSCode, Eclipse</li>
+      <li><strong>Languages:</strong> Portuguese (native), English (B2 Upper-Intermediate)</li>
+    </ul>
+
+    <h2>Certifications</h2>
+    <ul>
+      <li>Managing Cybersecurity Incidents and Disasters - Kennesaw State University</li>
+      <li>Managing Network Security - Kennesaw State University</li>
+      <li>The GRC Approach to Managing Cybersecurity - Kennesaw State University</li>
+      <li>The Foundations of Cybersecurity - Kennesaw State University</li> 
+      <li>Artificial Intelligence – O.P. Jindal Global University</li>
+      <li>Machine Learning – O.P. Jindal Global University</li>
+    </ul>
+
+    <h2>Personal Attributes</h2>
+    <p>Swimming Athlete. Strong analytical thinking, detail-oriented, self-motivated, quick learner, good communication skills, team player.</p>
+  </section>
+
+  <section class="projects">
+    <h2>Front-End Projects</h2>
+    <ul>
+      <li><a href="Accessible Form UI/index.html">Accessible Form UI</a></li>
+      <li><a href="Accordion/index.html">Accordion</a></li>
+      <li><a href="Age Calculator/index.html">Age Calculator</a></li>
+      <li><a href="Changelog Component/index.html">Changelog Component</a></li>
+      <li><a href="Cookie Consent/index.html">Cookie Consent</a></li>
+      <li><a href="Datepicker UI/index.html">Datepicker UI</a></li>
+      <li><a href="Image Grid Layout/index.html">Image Grid Layout</a></li>
+      <li><a href="Personal Portfolio/index.html">Personal Portfolio</a></li>
+      <li><a href="Profile Card/index.html">Profile Card</a></li>
+      <li><a href="Restricted Textarea/index.html">Restricted Textarea</a></li>
+      <li><a href="Single Page CV/index.html">Single Page CV</a></li>
+      <li><a href="Tabs/index.html">Tabs</a></li>
+      <li><a href="Testimonial Cards/index.html">Testimonial Cards</a></li>
+      <li><a href="Tooltip UI/index.html">Tooltip UI</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    © 2025 Gabriel de Toledo Abdu — All Rights Reserved
+  </footer>
+
 </body>
 </html>
