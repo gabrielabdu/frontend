@@ -42,6 +42,13 @@ body {
   margin-bottom: 1rem;
 }
 
+/* °C symbol */
+.temp p::after {
+  content: "°C";
+  font-size: 1.5rem;
+  margin-left: 4px;
+}
+
 .time_location {
   font-size: 1.5rem;
   font-weight: 400;
