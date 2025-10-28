@@ -1,162 +1,113 @@
-/* ===== Reset ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: "Inter", sans-serif;
-  background: #fff;
-  color: #222;
-  padding: 2rem;
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at 20% 20%, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
+  padding: 2rem;
 }
 
-/* ===== Layout ===== */
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  max-width: 900px;
-  width: 100%;
-  background: #fafafa;
-  border: 2px solid #000;
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
   padding: 2rem;
   gap: 2rem;
+  max-width: 950px;
+  width: 100%;
 }
 
 .form-title {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, #00d4ff, #7d2ae8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.form-group {
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-}
+.form-group { margin-bottom: 1rem; display: flex; flex-direction: column; }
+label { font-weight: 500; margin-bottom: 0.4rem; }
 
-label {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-/* ===== Inputs ===== */
 input {
   padding: 0.75rem;
-  border: 2px solid #bbb;
-  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
   font-size: 1rem;
-  transition: border 0.3s, box-shadow 0.3s;
+  transition: all 0.3s ease;
 }
-
+input::placeholder { color: #ccc; }
 input:focus {
+  border-color: #00d4ff;
+  box-shadow: 0 0 10px #00d4ff;
   outline: none;
-  border-color: #0073e6;
-  box-shadow: 0 0 0 3px rgba(0, 115, 230, 0.2);
-}
-
-input[aria-invalid="true"] {
-  border-color: #d9534f;
-  background-color: #fff5f5;
 }
 
 .error-message {
-  color: #d9534f;
+  color: #ff6b6b;
   font-size: 0.85rem;
   margin-top: 0.3rem;
 }
 
-/* ===== Password Visibility ===== */
-.password-wrapper {
-  position: relative;
-}
-
+.password-wrapper { position: relative; }
 .toggle-password {
-  position: absolute;
-  right: 0.75rem;
-  top: 50%;
+  position: absolute; right: 1rem; top: 50%;
   transform: translateY(-50%);
-  background: transparent;
-  border: none;
+  background: none; border: none;
+  color: #00d4ff;
   cursor: pointer;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
-/* ===== Submit Button ===== */
 .btn-submit {
-  background: #000;
+  background: linear-gradient(90deg, #00d4ff, #7d2ae8);
   color: #fff;
-  font-weight: 600;
-  padding: 0.9rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
+  padding: 0.9rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: 0.3s;
+}
+.btn-submit:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px #7d2ae8;
 }
 
-.btn-submit:hover,
-.btn-submit:focus {
-  background: #333;
-}
-
-/* ===== Progress Section ===== */
 .profile-status {
-  text-align: left;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Dynamic circular progress bar */
 .progress-circle {
   --progress: 0;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 1.2rem;
-  position: relative;
-  background: conic-gradient(
-    #000 calc(var(--progress) * 1%), 
-    #e0e0e0 calc(var(--progress) * 1%)
-  );
-  transition: background 0.8s ease;
+  width: 110px; height: 110px; border-radius: 50%;
+  background: conic-gradient(#00d4ff calc(var(--progress)*1%), rgba(255,255,255,0.2) calc(var(--progress)*1%));
+  display: flex; align-items: center; justify-content: center;
+  position: relative; transition: background 0.8s ease;
 }
-
 .progress-circle span {
-  position: absolute;
-  background: #fafafa;
-  width: 80px;
-  height: 80px;
+  background: #0f2027;
+  width: 85px; height: 85px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 600; font-size: 1.2rem;
 }
 
-/* Task list */
-.task-list {
-  list-style: none;
-  margin-top: 1rem;
-}
+h2 { margin-top: 1rem; }
+.task-list { list-style: none; margin-top: 1rem; }
+.task-list li { margin-bottom: 0.5rem; color: #ddd; }
 
-.task-list li {
-  margin-bottom: 0.5rem;
-}
-
-/* ===== Responsive ===== */
 @media (max-width: 768px) {
-  .container {
-    grid-template-columns: 1fr;
-  }
-
-  .profile-status {
-    align-items: center;
-  }
+  .container { grid-template-columns: 1fr; }
 }
