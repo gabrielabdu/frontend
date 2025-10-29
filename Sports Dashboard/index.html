@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports Dashboard v2</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Sports Dashboard</h1>
+    <nav>
+      <button id="themeToggle">🌙</button>
+      <ul>
+        <li><a href="#teams">Teams</a></li>
+        <li><a href="#players">Players</a></li>
+        <li><a href="#matches">Matches</a></li>
+        <li><a href="#stats">Stats</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Featured Match</h2>
+      <p id="featuredMatch">Loading...</p>
+    </div>
+  </section>
+
+  <section id="teams" class="cards-section">
+    <h2>Teams</h2>
+    <div class="cards-container" id="teamsContainer"></div>
+  </section>
+
+  <section id="players" class="cards-section">
+    <h2>Players</h2>
+    <label for="teamFilter">Filter by Team:</label>
+    <select id="teamFilter">
+      <option value="all">All Teams</option>
+    </select>
+    <div class="cards-container" id="playersContainer"></div>
+  </section>
+
+  <section id="matches" class="cards-section">
+    <h2>Upcoming Matches</h2>
+    <div class="cards-container" id="matchesContainer"></div>
+  </section>
+
+  <section id="stats" class="cards-section">
+    <h2>Team Stats</h2>
+    <canvas id="teamChart"></canvas>
+  </section>
+
+  <footer>
+    <p>© Gabriel de Toledo Abdu 2025 | Sports Dashboard v2</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
