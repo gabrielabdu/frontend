@@ -1,0 +1,127 @@
+:root {
+  --bg-color: #f8f9fc;
+  --text-color: #222;
+  --card-bg: #fff;
+  --accent: #007bff;
+  --positive: #00c853;
+  --negative: #e53935;
+}
+
+body.dark {
+  --bg-color: #1e1e2f;
+  --text-color: #f4f4f4;
+  --card-bg: #2a2a40;
+  --accent: #4c9fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 2rem;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.app {
+  width: 90%;
+  max-width: 900px;
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+#searchInput {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  outline: none;
+}
+
+#themeToggle {
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#themeToggle:hover {
+  background: #0056b3;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.75rem;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+tr:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.price-up {
+  color: var(--positive);
+  font-weight: bold;
+}
+
+.price-down {
+  color: var(--negative);
+  font-weight: bold;
+}
+
+.loading, .error {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  opacity: 0.7;
+  font-size: 0.8rem;
+}
