@@ -1,27 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Testimonial Cards</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dire Straits Fans – Testimonials (No Images)</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 40px 0 20px;
+      font-size: 2rem;
+      text-align: center;
+      color: #222;
+      letter-spacing: 1px;
+    }
+
+    .testimonials {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      max-width: 800px;
+      width: 90%;
+      margin-bottom: 40px;
+    }
+
+    .author, .carousel-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #222, #444);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      flex-shrink: 0;
+    }
+
+    .carousel-author {
+      gap: 8px;
+    }
+
+    .carousel-author .avatar {
+      width: 44px;
+      height: 44px;
+      font-size: 0.85rem;
+    }
+
+    .carousel-author .prev,
+    .carousel-author .next {
+      border: none;
+      background: #ddd;
+      padding: 8px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+  </style>
 </head>
 <body>
+
+  <h1>🎶 Dire Straits Fans – Testimonials 🎶</h1>
 
   <section class="testimonials">
 
     <!-- Testimonial 1 -->
     <div class="testimonial speech-bubble dark">
       <p>
-        I have been solving all the project ideas on roadmap.sh and I am surprised how far I have come from where I started.
+        I’ve been a Dire Straits fan since I first heard “Sultans of Swing.” 
+        Their music taught me that guitar solos can tell stories better than words. 
         <br><br>
-        <strong>Highly recommended!</strong>
+        <strong>Absolutely legendary band!</strong>
       </p>
       <div class="author">
-        <img src="person1.jpg" alt="Artem Jones">
+        <div class="avatar">MR</div>
         <div>
-          <h4>Artem Jones</h4>
-          <p>Junior Frontend Developer</p>
+          <h4>Michael Rivers</h4>
+          <p>Guitar Enthusiast</p>
         </div>
       </div>
     </div>
@@ -29,14 +103,15 @@
     <!-- Testimonial 2 -->
     <div class="testimonial speech-bubble light">
       <p>
-        Since starting my career in 2021, I have only followed one resource, roadmap.sh. 
-        It truly helped me go from 0 to having a job and changing the financial trajectory of my family.
+        Discovering Dire Straits completely changed how I listen to music. 
+        Mark Knopfler’s fingerstyle guitar and storytelling lyrics are pure magic. 
+        I’ve learned so much just by studying their songs.
       </p>
       <div class="author">
-        <img src="person2.jpg" alt="Artem Jones">
+        <div class="avatar">SL</div>
         <div>
-          <h4>Artem Jones</h4>
-          <p>Junior Frontend Developer</p>
+          <h4>Sarah Lane</h4>
+          <p>Music Teacher</p>
         </div>
       </div>
     </div>
@@ -44,29 +119,30 @@
     <!-- Testimonial 3 -->
     <div class="testimonial card dark">
       <div class="rating">★★★★★</div>
-      <h3>Jackie Mackle</h3>
-      <p class="role">Engineering Manager</p>
+      <h3>David Collins</h3>
+      <p class="role">Sound Engineer</p>
       <p>
-        I find myself recommending roadmap.sh to all the internees or junior developers. 
-        It's a great way to skill up and grow in your career.
+        Dire Straits’ recordings from the 80s are still some of the cleanest mixes ever made. 
+        “Brothers in Arms” is a masterclass in tone and production. 
+        Every aspiring producer should study their sound.
       </p>
     </div>
 
     <!-- Testimonial 4 -->
     <div class="testimonial carousel">
       <p>
-        roadmap.sh is an incredible resource. I was fortunate to discover it during my university days in 2018. 
-        Back then, it was just a single repository with three images. It's amazing to see how much impact it has had 
-        on millions of lives since then.
+        I’ve been following Dire Straits since my college days. 
+        From the bluesy “Telegraph Road” to the emotional “Romeo and Juliet,” 
+        every track feels timeless. Their music never grows old.
       </p>
       <div class="carousel-author">
         <button class="prev">&lt;</button>
-        <img src="person1.jpg" alt="Artem Jones">
-        <img src="person2.jpg" alt="Artem Jones">
-        <img src="person1.jpg" alt="Artem Jones">
+        <div class="avatar">MR</div>
+        <div class="avatar">SL</div>
+        <div class="avatar">DC</div>
         <button class="next">&gt;</button>
       </div>
-      <h4>Artem Jones</h4>
+      <h4>Dire Straits Fans Community</h4>
     </div>
 
   </section>
