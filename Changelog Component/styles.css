@@ -1,6 +1,12 @@
-/* Basic reset */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html,body { height: 100%; }
+/* ===== Basic Reset ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+}
 body {
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   background: linear-gradient(180deg,#f7f9fc 0%, #ffffff 100%);
@@ -10,7 +16,7 @@ body {
   padding: 40px 20px;
 }
 
-/* Container */
+/* ===== Container ===== */
 .changelog-timeline {
   width: 100%;
   max-width: 900px;
@@ -21,7 +27,7 @@ body {
   overflow: hidden;
 }
 
-/* Header */
+/* ===== Header ===== */
 .cl-header h1 {
   font-size: 1.6rem;
   letter-spacing: -0.02em;
@@ -33,7 +39,7 @@ body {
   margin-bottom: 18px;
 }
 
-/* Timeline layout */
+/* ===== Timeline layout ===== */
 .timeline {
   position: relative;
   padding-left: 140px; /* space for dates & line */
@@ -52,7 +58,7 @@ body {
   transform-origin: top;
 }
 
-/* Single entry */
+/* ===== Single entry ===== */
 .entry {
   position: relative;
   display: grid;
@@ -60,6 +66,13 @@ body {
   grid-column-gap: 16px;
   margin-bottom: 26px;
   align-items: start;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+.entry.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Date column (left) */
@@ -85,6 +98,11 @@ body {
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(37,99,235,0.15);
   transform: translateY(4px);
+  transition: all 0.3s ease;
+}
+.entry-marker:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(37,99,235,0.3);
 }
 
 /* Content card (right) */
@@ -95,6 +113,11 @@ body {
   padding: 14px 16px;
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(13, 38, 66, 0.04);
+  transition: all 0.3s ease;
+}
+.entry-content:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(13, 38, 66, 0.1);
 }
 
 /* Meta row */
@@ -134,10 +157,28 @@ body {
   line-height: 1.45;
 }
 
-/* Last entry spacing */
-.entry:last-child { margin-bottom: 0; }
+/* Read more / less */
+.entry-text.collapsed {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* show 3 lines */
+  -webkit-box-orient: vertical;
+}
+.read-more {
+  display: block;
+  font-size: 0.85rem;
+  color: #2563eb;
+  cursor: pointer;
+  margin-top: 4px;
+  font-weight: 600;
+}
 
-/* Responsive */
+/* Last entry spacing */
+.entry:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== Responsive ===== */
 @media (max-width: 720px) {
   .timeline { padding-left: 80px; }
   .timeline::before { left: 60px; }
