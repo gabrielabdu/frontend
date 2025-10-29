@@ -1,3 +1,4 @@
+/* ===== RESET ===== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,27 +6,90 @@
   font-family: 'Inter', sans-serif;
 }
 
+/* ===== BACKGROUND ===== */
 body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  transition: background 0.4s;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== HEADER ===== */
+header {
+  text-align: center;
+  margin-top: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: #f5f7fa;
+  gap: 15px;
 }
 
+header h1 {
+  font-size: 1.8rem;
+  color: #fff;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+#themeToggle {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 6px 10px;
+  transition: 0.3s;
+}
+
+#themeToggle:hover {
+  background: rgba(255,255,255,0.4);
+}
+
+/* ===== MAIN CONTENT ===== */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* ===== DATEPICKER CARD ===== */
 .datepicker {
   position: relative;
-  width: 260px;
-  max-width: 90vw;
+  width: 290px;
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transition: 0.3s;
 }
 
-/* Input + Button */
+.datepicker:hover {
+  transform: translateY(-4px);
+}
+
+/* ===== INPUT ===== */
 .input-wrapper {
   display: flex;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 8px;
   overflow: hidden;
-  background: white;
+  background: rgba(255,255,255,0.6);
+  transition: 0.2s;
 }
 
 .input-wrapper input {
@@ -34,6 +98,12 @@ body {
   border: none;
   outline: none;
   font-size: 14px;
+  color: #333;
+  background: transparent;
+}
+
+.input-wrapper:focus-within {
+  border-color: #0077ff;
 }
 
 .calendar-btn {
@@ -43,43 +113,73 @@ body {
   width: 42px;
   cursor: pointer;
   font-size: 18px;
+  transition: 0.3s;
 }
 
-/* Calendar UI */
+.calendar-btn:hover {
+  background: #005fd4;
+}
+
+/* ===== CALENDAR PANEL ===== */
 .calendar {
   position: absolute;
-  top: 110%;
+  top: 115%;
   left: 0;
   width: 100%;
-  background: white;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  padding: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
+  background: rgba(255,255,255,0.95);
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.25s ease;
   z-index: 10;
 }
 
+.calendar.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ===== HEADER ===== */
 .calendar-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
-.calendar-header .month-year {
+.month-year {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 15px;
+  color: #333;
 }
 
 .nav {
   background: none;
   border: none;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
-  color: #333;
+  color: #0077ff;
+  transition: 0.2s;
 }
 
+.nav:hover {
+  transform: scale(1.2);
+}
+
+.year-select {
+  margin-left: 8px;
+  padding: 3px 4px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* ===== GRID ===== */
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -96,50 +196,64 @@ body {
 
 .day {
   text-align: center;
-  padding: 6px 0;
+  padding: 7px 0;
   font-size: 13px;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: 0.15s;
 }
 
 .day:hover {
   background: #e3f0ff;
 }
 
-.empty {
-  background: transparent;
-  cursor: default;
+.today {
+  border: 1px solid #0077ff;
+  color: #0077ff;
 }
 
-/* 🌐 RESPONSIVE DESIGN */
-@media (max-width: 480px) {
-  .datepicker {
-    width: 100%;
-    max-width: 100%;
-  }
+.selected {
+  background: #0077ff;
+  color: white;
+  font-weight: 600;
+}
 
-  .input-wrapper input {
-    font-size: 13px;
-    padding: 8px 10px;
-  }
+/* ===== FOOTER ===== */
+footer {
+  margin-bottom: 15px;
+  color: rgba(255,255,255,0.9);
+  font-size: 13px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
 
-  .calendar {
-    position: static;
-    margin-top: 10px;
-    box-shadow: none;
-    border: 1px solid #ddd;
-  }
+/* ===== DARK MODE ===== */
+body.dark {
+  background: linear-gradient(135deg, #141e30, #243b55);
+}
 
-  .calendar-grid {
-    gap: 2px;
-  }
+body.dark .datepicker {
+  background: rgba(0,0,0,0.4);
+  border-color: rgba(255,255,255,0.2);
+}
 
-  .day {
-    padding: 5px 0;
-    font-size: 12px;
-  }
+body.dark .calendar {
+  background: rgba(30,30,30,0.95);
+  color: #fff;
+}
 
-  .calendar-header .month-year {
-    font-size: 13px;
-  }
+body.dark .month-year {
+  color: #fff;
+}
+
+body.dark .input-wrapper {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.2);
+}
+
+body.dark .input-wrapper input {
+  color: #fff;
+}
+
+body.dark footer {
+  color: rgba(255,255,255,0.7);
 }
