@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineVerse | Movie Discovery App</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>CineVerse</h1>
+      <div class="controls">
+        <input type="text" id="searchInput" placeholder="Search movies..." />
+        <button id="themeToggle">🌙</button>
+      </div>
+    </header>
+
+    <main>
+      <div id="movieGrid" class="movie-grid"></div>
+      <p id="loadingText" class="loading">Loading movies...</p>
+      <p id="errorText" class="error hidden">Error loading movies.</p>
+    </main>
+
+    <footer>
+      <p>© 2025 Gabriel de Toledo Abdu</p>
+    </footer>
+  </div>
+</body>
+</html>
