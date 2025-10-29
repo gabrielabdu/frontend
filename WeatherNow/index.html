@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WeatherNow | Real-Time Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>WeatherNow</h1>
+      <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Enter city name..." />
+        <button id="searchBtn">Search</button>
+      </div>
+    </header>
+
+    <main>
+      <div class="weather-card hidden">
+        <h2 id="cityName"></h2>
+        <p id="date"></p>
+        <div class="weather-info">
+          <img id="weatherIcon" alt="Weather Icon" />
+          <div class="details">
+            <p class="temp" id="temperature"></p>
+            <p id="description"></p>
+          </div>
+        </div>
+        <div class="extra-info">
+          <p>Humidity: <span id="humidity"></span>%</p>
+          <p>Wind: <span id="wind"></span> km/h</p>
+        </div>
+      </div>
+
+      <p class="error hidden" id="errorMsg">City not found. Try again.</p>
+    </main>
+
+    <footer>
+      <p>© 2025 Gabriel de Toledo Abdu</p>
+    </footer>
+  </div>
+</body>
+</html>
