@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tabs Component</title>
+  <title>U2 – Tabs Component</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -11,15 +11,26 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background-color: #f7f7f7;
+      background-color: #f0f0f0;
+      margin: 0;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #000;
+      text-align: center;
+      letter-spacing: 1px;
     }
 
     .tabs-container {
       background-color: white;
       border: 2px solid #000;
-      border-radius: 10px;
-      width: 600px;
+      border-radius: 12px;
+      width: 700px;
       padding: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
 
     .tabs {
@@ -27,13 +38,20 @@
       gap: 20px;
       border-bottom: 1px solid #ccc;
       margin-bottom: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .tab {
-      padding: 10px;
+      padding: 10px 15px;
       cursor: pointer;
       font-weight: 500;
       color: gray;
+      transition: 0.3s;
+    }
+
+    .tab:hover {
+      color: black;
     }
 
     .tab.active {
@@ -43,35 +61,96 @@
 
     .tab-content {
       display: none;
-      background: black;
-      color: white;
+      background: #000;
+      color: #fff;
       padding: 30px;
-      text-align: center;
-      border-radius: 12px;
+      text-align: left;
+      border-radius: 10px;
+      animation: fadeIn 0.4s ease;
     }
 
     .tab-content.active {
       display: block;
     }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #00ccff;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
   </style>
 </head>
 <body>
+  <h1>🎵 U2 – Legendary Rock Band 🎵</h1>
+
   <div class="tabs-container">
     <div class="tabs">
-      <div class="tab active" data-tab="tab1">First Tab</div>
-      <div class="tab" data-tab="tab2">Second Tab</div>
-      <div class="tab" data-tab="tab3">Third Tab</div>
-      <div class="tab" data-tab="tab4">Fourth Tab</div>
+      <div class="tab active" data-tab="tab1">Biography</div>
+      <div class="tab" data-tab="tab2">Members</div>
+      <div class="tab" data-tab="tab3">Discography</div>
+      <div class="tab" data-tab="tab4">Awards</div>
+      <div class="tab" data-tab="tab5">Fun Facts</div>
     </div>
 
-    <p>Clicking each tab should hide the content of the other tab and show the content of the clicked tab. By default, enable the first tab.</p>
+    <div id="tab1" class="tab-content active">
+      <h2>Biography</h2>
+      <p>U2 is an Irish rock band formed in Dublin in 1976. The group consists of Bono (lead vocals and rhythm guitar), 
+      The Edge (lead guitar, keyboards, and backing vocals), Adam Clayton (bass guitar), and Larry Mullen Jr. (drums and percussion). 
+      Known for their expansive sound and political themes, U2 became one of the most successful bands in the world, 
+      blending post-punk roots with spiritual and social consciousness.</p>
+    </div>
 
-    <div id="tab1" class="tab-content active">First Tab content to be displayed here.</div>
-    <div id="tab2" class="tab-content">Second Tab content to be displayed here.</div>
-    <div id="tab3" class="tab-content">Third Tab content to be displayed here.</div>
-    <div id="tab4" class="tab-content">Fourth Tab content to be displayed here.</div>
+    <div id="tab2" class="tab-content">
+      <h2>Band Members</h2>
+      <ul>
+        <li><strong>Bono</strong> (Paul David Hewson) – Lead vocals and rhythm guitar.</li>
+        <li><strong>The Edge</strong> (David Howell Evans) – Lead guitar, keyboards, and backing vocals.</li>
+        <li><strong>Adam Clayton</strong> – Bass guitar.</li>
+        <li><strong>Larry Mullen Jr.</strong> – Drums and percussion.</li>
+      </ul>
+      <p>Each member has remained with the band since its founding, a rare continuity in the music industry.</p>
+    </div>
 
-    <p>Add some dummy content or just add a simple text showing the tab.</p>
+    <div id="tab3" class="tab-content">
+      <h2>Discography Highlights</h2>
+      <ul>
+        <li><em>War</em> (1983) – Featured the hit “Sunday Bloody Sunday”.</li>
+        <li><em>The Joshua Tree</em> (1987) – Their landmark album with “With or Without You” and “Where the Streets Have No Name”.</li>
+        <li><em>Achtung Baby</em> (1991) – Marked a creative reinvention with a darker, more experimental sound.</li>
+        <li><em>All That You Can't Leave Behind</em> (2000) – Included the inspirational “Beautiful Day”.</li>
+        <li><em>Songs of Experience</em> (2017) – A reflective work balancing maturity and energy.</li>
+      </ul>
+    </div>
+
+    <div id="tab4" class="tab-content">
+      <h2>Awards & Recognition</h2>
+      <ul>
+        <li>22 Grammy Awards – more than any other band in history.</li>
+        <li>Inducted into the Rock and Roll Hall of Fame in 2005.</li>
+        <li>Over 170 million records sold worldwide.</li>
+        <li>Multiple humanitarian awards for global activism and charity work.</li>
+      </ul>
+      <p>Bono’s activism and U2’s dedication to social justice have made them cultural icons beyond music.</p>
+    </div>
+
+    <div id="tab5" class="tab-content">
+      <h2>Fun Facts</h2>
+      <ul>
+        <li>Before U2, they were briefly called “Feedback” and “The Hype”.</li>
+        <li>The Edge’s signature sound comes from heavy use of delay effects.</li>
+        <li>U2 once performed on a rooftop in Los Angeles for a music video — echoing The Beatles’ famous final concert.</li>
+        <li>Their “360° Tour” (2009–2011) became the highest-grossing concert tour of all time.</li>
+        <li>Bono has been nominated for the Nobel Peace Prize multiple times.</li>
+      </ul>
+    </div>
   </div>
 
   <script>
