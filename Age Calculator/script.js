@@ -6,11 +6,11 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const input = document.getElementById("birthdate").value.trim();
-  const [day, month, year] = input.split("/").map(Number);
+  const [month, day, year] = input.split("/").map(Number); // swapped for MM/DD/YYYY
 
   // Basic validation
   if (!day || !month || !year || isNaN(day) || isNaN(month) || isNaN(year)) {
-    result.textContent = "⚠️ Please enter a valid date (DD/MM/YYYY)";
+    result.textContent = "⚠️ Please enter a valid date (MM/DD/YYYY)";
     return;
   }
 
