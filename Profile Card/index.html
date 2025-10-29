@@ -3,53 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile Card UI Design</title>
-    <!-- CSS -->
+    <title>Dire Straits Profile Card</title>
     <link rel="stylesheet" href="style.css" />
-    <!-- Boxicons CSS -->
-    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="profile-card">
       <div class="image">
-        <img src="profile.jpg" alt="" class="profile-img" />
+        <img
+          src="83243715-f44e-4ee0-a1ec-f5948177b051.png"
+          alt="Dire Straits Band"
+          class="profile-img"
+        />
       </div>
+      
       <div class="text-data">
-        <span class="name">CodingLab</span>
-        <span class="job">YouTuber & Blogger</span>
+        <span class="name">Dire Straits</span>
+        <span class="job">Legendary British Rock Band</span>
       </div>
+
       <div class="media-buttons">
-        <a href="#" style="background: #4267b2" class="link">
-          <i class="bx bxl-facebook"></i>
-        </a>
-        <a href="#" style="background: #1da1f2" class="link">
+        <a
+          href="https://x.com/DireStraitsHQ"
+          target="_blank"
+          style="background: #1da1f2"
+          class="link"
+        >
           <i class="bx bxl-twitter"></i>
         </a>
-        <a href="#" style="background: #e1306c" class="link">
+        <a
+          href="https://www.instagram.com/direstraitshq/"
+          target="_blank"
+          style="background: #e1306c"
+          class="link"
+        >
           <i class="bx bxl-instagram"></i>
         </a>
-        <a href="#" style="background: #ff0000" class="link">
+        <a
+          href="https://www.youtube.com/@direstraitsofficial"
+          target="_blank"
+          style="background: #ff0000"
+          class="link"
+        >
           <i class="bx bxl-youtube"></i>
         </a>
       </div>
+
       <div class="buttons">
-        <button class="button">Subscribe</button>
-        <button class="button">Message</button>
+        <button class="button" id="likeBtn">Like</button>
+        <button class="button" id="shareBtn">Share</button>
       </div>
+
       <div class="analytics">
         <div class="data">
           <i class="bx bx-heart"></i>
-          <span class="number">60k</span>
+          <span class="number" id="likesCount">250k</span>
         </div>
         <div class="data">
           <i class="bx bx-message-rounded"></i>
-          <span class="number">20k</span>
+          <span class="number" id="msgCount">80k</span>
         </div>
         <div class="data">
           <i class="bx bx-share"></i>
-          <span class="number">12k</span>
+          <span class="number" id="shareCount">30k</span>
         </div>
       </div>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
