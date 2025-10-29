@@ -1,32 +1,40 @@
-<div class="datepicker">
-  <div class="input-wrapper">
-    <input type="text" placeholder="dd / mm / yyyy" readonly>
-    <button class="calendar-btn">
-      <span>📅</span>
-    </button>
-  </div>
-
-  <div class="calendar">
-    <div class="calendar-header">
-      <button class="nav">&lt;</button>
-      <span class="month-year">December 2022</span>
-      <button class="nav">&gt;</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Datepicker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="datepicker">
+    <div class="input-wrapper">
+      <input type="text" placeholder="dd / mm / yyyy" readonly />
+      <button class="calendar-btn" aria-label="Open calendar">📅</button>
     </div>
 
-    <div class="calendar-grid">
-      <div class="day-label">S</div>
-      <div class="day-label">M</div>
-      <div class="day-label">T</div>
-      <div class="day-label">W</div>
-      <div class="day-label">T</div>
-      <div class="day-label">F</div>
-      <div class="day-label">S</div>
+    <div class="calendar">
+      <div class="calendar-header">
+        <button class="nav prev">&lt;</button>
+        <div>
+          <span class="month-year"></span>
+          <select class="year-select"></select>
+        </div>
+        <button class="nav next">&gt;</button>
+      </div>
 
-      <div class="day empty"></div><div class="day empty"></div><div class="day empty"></div><div class="day empty"></div><div class="day">1</div><div class="day">2</div><div class="day">3</div>
-      <div class="day">4</div><div class="day">5</div><div class="day">6</div><div class="day">7</div><div class="day">8</div><div class="day">9</div><div class="day">10</div>
-      <div class="day">11</div><div class="day">12</div><div class="day">13</div><div class="day">14</div><div class="day">15</div><div class="day">16</div><div class="day">17</div>
-      <div class="day">18</div><div class="day">19</div><div class="day">20</div><div class="day">21</div><div class="day">22</div><div class="day">23</div><div class="day">24</div>
-      <div class="day">25</div><div class="day">26</div><div class="day">27</div><div class="day">28</div><div class="day">29</div><div class="day">30</div><div class="day">31</div>
+      <div class="calendar-grid">
+        <div class="day-label">S</div>
+        <div class="day-label">M</div>
+        <div class="day-label">T</div>
+        <div class="day-label">W</div>
+        <div class="day-label">T</div>
+        <div class="day-label">F</div>
+        <div class="day-label">S</div>
+      </div>
     </div>
   </div>
-</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
