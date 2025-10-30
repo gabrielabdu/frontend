@@ -1,19 +1,30 @@
 /* ======= Base Styles ======= */
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f0f2f5;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   height: 100vh;
   margin: 0;
+  color: #fff;
+  padding-top: 5vh;
 }
 
 .navbar {
-  background-color: #fff;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem 3rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #ffcc00;
 }
 
 .nav-list {
@@ -22,30 +33,36 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
+  justify-content: center;
 }
 
 .nav-item {
   position: relative;
   cursor: pointer;
-  font-weight: bold;
-  color: #333;
+  font-weight: 600;
+  transition: transform 0.2s;
+}
+
+.nav-item:hover {
+  transform: scale(1.1);
 }
 
 /* ======= Tooltip Base Styles ======= */
 .tooltip {
   position: absolute;
-  bottom: 125%;
+  bottom: 130%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #333;
+  background-color: #222;
   color: #fff;
-  padding: 6px 10px;
-  border-radius: 4px;
+  padding: 8px 12px;
+  border-radius: 5px;
   white-space: nowrap;
   font-size: 0.85rem;
   opacity: 0;
   pointer-events: none;
   z-index: 10;
+  transition: opacity 0.3s ease;
 }
 
 /* Tooltip arrow */
@@ -55,15 +72,14 @@ body {
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  border-width: 5px;
+  border-width: 6px;
   border-style: solid;
-  border-color: #333 transparent transparent transparent;
+  border-color: #222 transparent transparent transparent;
 }
 
-/* ======= Desktop Animations (default) ======= */
+/* Show Tooltip */
 .nav-item:hover .tooltip {
   opacity: 1;
-  pointer-events: auto;
   animation: bounceDesktop 0.4s forwards;
 }
 
@@ -75,47 +91,77 @@ body {
   100% { transform: translateX(-50%) translateY(0) scale(1); }
 }
 
-/* Optional stagger for desktop */
-.nav-list .nav-item:nth-child(1) .tooltip { transition-delay: 0s; }
-.nav-list .nav-item:nth-child(2) .tooltip { transition-delay: 0.05s; }
-.nav-list .nav-item:nth-child(3) .tooltip { transition-delay: 0.1s; }
-.nav-list .nav-item:nth-child(4) .tooltip { transition-delay: 0.15s; }
+/* ======= Info Card ======= */
+.info-card {
+  margin-top: 3rem;
+  width: 90%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  padding: 1.5rem;
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  text-align: center;
+  display: none;
+  animation: fadeIn 0.4s ease forwards;
+}
 
-/* ======= Responsive: Mobile Tooltips ======= */
+.info-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.info-card h2 {
+  color: #ffcc00;
+  margin-bottom: 0.5rem;
+}
+
+.info-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.close-btn {
+  margin-top: 1rem;
+  padding: 8px 14px;
+  background: #ffcc00;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #333;
+  transition: background 0.3s;
+}
+
+.close-btn:hover {
+  background: #ffd84a;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ======= Responsive ======= */
 @media (max-width: 600px) {
   .nav-list {
     flex-direction: column;
     gap: 1.5rem;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .tooltip {
     bottom: auto;
-    top: 125%;
+    top: 130%;
     transform: translateX(-50%) translateY(5px);
-    transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
   .tooltip::after {
     top: auto;
     bottom: 100%;
-    border-color: transparent transparent #333 transparent;
+    border-color: transparent transparent #222 transparent;
   }
-
-  /* Simpler mobile animation */
-  .nav-item:hover .tooltip {
-    animation: bounceMobile 0.4s forwards;
-  }
-
-  @keyframes bounceMobile {
-    0%   { transform: translateX(-50%) translateY(5px) scale(0.9); }
-    50%  { transform: translateX(-50%) translateY(-2px) scale(1.05); }
-    100% { transform: translateX(-50%) translateY(0) scale(1); }
-  }
-
-  /* Stagger mobile tooltips */
-  .nav-list .nav-item:nth-child(1) .tooltip { transition-delay: 0s; }
-  .nav-list .nav-item:nth-child(2) .tooltip { transition-delay: 0.05s; }
-  .nav-list .nav-item:nth-child(3) .tooltip { transition-delay: 0.1s; }
-  .nav-list .nav-item:nth-child(4) .tooltip { transition-delay: 0.15s; }
 }
