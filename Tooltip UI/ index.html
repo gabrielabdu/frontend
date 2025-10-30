@@ -3,29 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Dynamic Tooltips</title>
+  <title>Sports Interactive Tooltips</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <nav class="navbar">
+    <h1 class="title">🏅 Sports Navigation</h1>
     <ul class="nav-list">
-      <li class="nav-item">
-        Home
-        <span class="tooltip">Go to homepage</span>
+      <li class="nav-item" data-tooltip="Latest football news" data-sport="football">
+        ⚽ Football
+        <span class="tooltip">Football: The world’s favorite sport</span>
       </li>
-      <li class="nav-item">
-        About
-        <span class="tooltip">Learn more about us</span>
+      <li class="nav-item" data-tooltip="Basketball highlights" data-sport="basketball">
+        🏀 Basketball
+        <span class="tooltip">Basketball: Slam dunks & fast plays</span>
       </li>
-      <li class="nav-item">
-        Services
-        <span class="tooltip">Our services overview</span>
+      <li class="nav-item" data-tooltip="Tennis tournaments" data-sport="tennis">
+        🎾 Tennis
+        <span class="tooltip">Tennis: Grand Slam battles</span>
       </li>
-      <li class="nav-item">
-        Contact
-        <span class="tooltip">Get in touch</span>
+      <li class="nav-item" data-tooltip="Formula 1 standings" data-sport="f1">
+        🏎️ Formula 1
+        <span class="tooltip">F1: High-speed racing</span>
       </li>
     </ul>
   </nav>
+
+  <!-- Dynamic Info Card -->
+  <section class="info-card" id="info-card"></section>
+
+  <script src="script.js"></script>
 </body>
 </html>
